@@ -1,8 +1,8 @@
 import express from "express";
-
+import todoRouter from "./routes/todoRoute.js";
 const app = express();
 app.use(express.json());
-const port = 8080;
-app.listen(port, function () {
-  console.log(`listening on port ${port}`);
-});
+
+app.use("/api/todo", todoRouter);
+
+export default app;
